@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Plus, Zap, FolderOpen, Activity, AlertTriangle, DollarSign, Clock } from "lucide-react";
 import { AppLayout } from "@/components/layout";
 import { PageHeader, StatsCard, DataTable, StatusBadge } from "@/components/shared";
@@ -99,6 +99,18 @@ const activityColumns = [
 ];
 
 export default function Dashboard() {
+  const navigate = useNavigate();
+
+  const handleActivityClick = (item: typeof recentActivity[0]) => {
+    if (item.type === 'upload') {
+      navigate('/files');
+    } else if (item.type === 'invocation') {
+      navigate('/invocations');
+    } else {
+      navigate(`/functions/${item.name}`); // Assuming name matches ID or navigates to list
+    }
+  };
+
   return (
     <AppLayout>
       <PageHeader
@@ -116,33 +128,48 @@ export default function Dashboard() {
 
       {/* Stats Grid */}
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mb-8">
-        <StatsCard
-          title="Functions"
-          value={stats.functions}
-          icon={Zap}
-        />
-        <StatsCard
-          title="Files"
-          value={stats.files}
-          icon={FolderOpen}
-        />
-        <StatsCard
-          title="Invocations (24h)"
-          value={stats.invocations.toLocaleString()}
-          icon={Activity}
-          trend={{ value: 12, positive: true }}
-        />
-        <StatsCard
-          title="Errors"
-          value={stats.errors}
-          icon={AlertTriangle}
-        />
-        <StatsCard
-          title="Est. Cost"
-          value={`$${stats.estimatedCost.toFixed(2)}`}
-          subtitle="This month"
-          icon={DollarSign}
-        />
+        <Link to="/functions" className="block transition-transform hover:scale-[1.02]">
+          <StatsCard
+            title="Functions"
+            value={stats.functions}
+            icon={Zap}
+            className="h-full cursor-pointer hover:border-primary/50"
+          />
+        </Link>
+        <Link to="/files" className="block transition-transform hover:scale-[1.02]">
+          <StatsCard
+            title="Files"
+            value={stats.files}
+            icon={FolderOpen}
+            className="h-full cursor-pointer hover:border-primary/50"
+          />
+        </Link>
+        <Link to="/invocations" className="block transition-transform hover:scale-[1.02]">
+          <StatsCard
+            title="Invocations (24h)"
+            value={stats.invocations.toLocaleString()}
+            icon={Activity}
+            trend={{ value: 12, positive: true }}
+            className="h-full cursor-pointer hover:border-primary/50"
+          />
+        </Link>
+        <Link to="/logs" className="block transition-transform hover:scale-[1.02]">
+          <StatsCard
+            title="Errors"
+            value={stats.errors}
+            icon={AlertTriangle}
+            className="h-full cursor-pointer hover:border-primary/50"
+          />
+        </Link>
+        <Link to="/billing" className="block transition-transform hover:scale-[1.02]">
+          <StatsCard
+            title="Est. Cost"
+            value={`$${stats.estimatedCost.toFixed(2)}`}
+            subtitle="This month"
+            icon={DollarSign}
+            className="h-full cursor-pointer hover:border-primary/50"
+          />
+        </Link>
       </div>
 
       {/* Recent Activity */}
@@ -162,6 +189,7 @@ export default function Dashboard() {
         <DataTable
           columns={activityColumns}
           data={recentActivity}
+          onRowClick={handleActivityClick}
         />
       </div>
     </AppLayout>
