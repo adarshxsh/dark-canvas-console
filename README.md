@@ -1,73 +1,80 @@
-# Welcome to your Lovable project
+# Dark Canvas Console
 
-## Project info
+An interactive web console for managing serverless functions, files, billing, and settings. Built with React, TypeScript, Vite, and Tailwind CSS.
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+## Features
 
-## How can I edit this code?
+- **Dashboard**: Overview of your serverless infrastructure.
+- **Function Management**: Create, view, and invoke serverless functions.
+- **File Explorer**: Manage files and metadata easily.
+- **Billing & Usage**: Track your resource consumption and costs.
+- **Logs & Invocations**: Monitor system activity and function calls.
+- **Modern UI**: Responsive design with GitHub-inspired dark aesthetics.
 
-There are several ways of editing your application.
+## Tech Stack
 
-**Use Lovable**
+- **Framework**: React with TypeScript
+- **Build Tool**: Vite
+- **Styling**: Tailwind CSS & PostCSS
+- **State Management**: TanStack Query (React Query)
+- **Icons**: Lucide React
+- **Testing**: Vitest
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+## Getting Started
 
-Changes made via Lovable will be committed automatically to this repo.
+### Prerequisites
 
-**Use your preferred IDE**
+- Node.js (v18+)
+- Bun (optional, for faster installation)
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+### Installation
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/adarshxsh/dark-canvas-console.git
+   cd dark-canvas-console
+   ```
 
-Follow these steps:
+2. Install dependencies:
+   ```bash
+   # Using bun
+   bun install
+   # Or using npm
+   npm install
+   ```
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+### Running the App
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+```bash
+# Start development server
+npm run dev # or bun run dev
 ```
 
-**Edit a file directly in GitHub**
+The application will be available at `http://localhost:8080`.
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+### Running Tests
 
-**Use GitHub Codespaces**
+```bash
+npm run test # or bun run test
+```
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## Folder Structure
 
-## What technologies are used for this project?
+- `src/components/`: UI components and layout systems.
+- `src/pages/`: Main application routes and views.
+- `src/hooks/`: Custom React hooks for state and logic.
+- `src/lib/`: Utility functions and mock data.
+- `src/contexts/`: React context providers.
+- `public/`: Static assets and icons.
 
-This project is built with:
+## Contributing
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+Contributions are welcome! Please fork the repository and submit a pull request for any features or bug fixes.
 
-## How can I deploy this project?
+## License
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
+This project is licensed under the MIT License.
 
-## Can I connect a custom domain to my Lovable project?
+---
 
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+Built for the [Devlup Labs](https://github.com/devlup-labs) community.
