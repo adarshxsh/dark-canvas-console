@@ -50,31 +50,38 @@ An interactive web console for managing serverless functions, files, billing, an
 npm run dev # or bun run dev
 ```
 
-The application will be available at `http://localhost:8080`.
+**Edit a file directly in GitHub**
 
-### Running Tests
+- Navigate to the desired file(s).
+- Click the "Edit" button (pencil icon) at the top right of the file view.
+- Make your changes and commit the changes.
 
-```bash
-npm run test # or bun run test
-```
+**Use GitHub Codespaces**
 
-## Folder Structure
+- Navigate to the main page of your repository.
+- Click on the "Code" button (green button) near the top right.
+- Select the "Codespaces" tab.
+- Click on "New codespace" to launch a new Codespace environment.
+- Edit files directly within the Codespace and commit and push your changes once you're done.
 
-- `src/components/`: UI components and layout systems.
-- `src/pages/`: Main application routes and views.
-- `src/hooks/`: Custom React hooks for state and logic.
-- `src/lib/`: Utility functions and mock data.
-- `src/contexts/`: React context providers.
-- `public/`: Static assets and icons.
+## What technologies are used for this project?
 
-## Contributing
+This project is built with:
 
-Contributions are welcome! Please fork the repository and submit a pull request for any features or bug fixes.
+- Vite
+- TypeScript
+- React
+- shadcn-ui
+- Tailwind CSS
 
-## License
+## How can I deploy this project?
 
-This project is licensed under the MIT License.
+Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
 
----
+## Can I connect a custom domain to my Lovable project?
 
-Built for the [Devlup Labs](https://github.com/devlup-labs) community.
+Yes, you can!
+
+To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+
+Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
